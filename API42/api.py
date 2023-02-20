@@ -236,7 +236,7 @@ class Api42():
         return self.__getPaginatedData(f'/users/{userId}/certificates/', self.__combine_dict(args))
     
     def getCertificateCertificatesUsers(self, certificateId, *args):
-        return self.__getPaginatedData(f'/certificates/{certificateId}/certificates_users', query)
+        return self.__getPaginatedData(f'/certificates/{certificateId}/certificates_users', self.__combine_dict(args))
     
     # ------------------- Closes ------------------- #
     
