@@ -1,4 +1,5 @@
 import requests
+import time
 
 def sort(arg):
     return(f"sort={arg}")
@@ -38,6 +39,9 @@ class Api42():
             if r.status_code == 401 and r.json()['message'] == "The access token expired":
                 self.token = self.__getTokenHeader()
                 continue
+            elif r.status_code == 429:
+                time.sleep(0.5)
+                continue
             elif r.status_code != 200:
                 raise Exception("Error: " + str(r.status_code) + " " + r.text)
             if len(r.json()) == 0:
@@ -51,45 +55,13 @@ class Api42():
         if r.status_code == 401 and r.json()['message'] == "The access token expired":
             self.token = self.__getTokenHeader()
             return self.__getNonPaginatedData(url)
+        elif r.status_code == 429:
+            time.sleep(0.5)
+            return self.__getNonPaginatedData(url)
         elif r.status_code != 200:
             raise Exception("Error: " + str(r.status_code) + " " + r.text)
         return r.json()
     
-    def __postData(self, url, data):
-        r = requests.post(f"{self.api_url}{url}", headers=self.token, data=data)
-        if r.status_code == 401 and r.json()['message'] == "The access token expired":
-            self.token = self.__getTokenHeader()
-            return self.__postData(url, data)
-        elif r.status_code != 201:
-            raise Exception("Error: " + str(r.status_code) + " " + r.text)
-        return r.json()
-    
-    def __putData(self, url, data):
-        r = requests.put(f"{self.api_url}{url}", headers=self.token, data=data)
-        if r.status_code == 401 and r.json()['message'] == "The access token expired":
-            self.token = self.__getTokenHeader()
-            return self.__putData(url, data)
-        elif r.status_code != 204:
-            raise Exception("Error: " + str(r.status_code) + " " + r.text)
-        return r.json()
-    
-    def __patchData(self, url, data):
-        r = requests.patch(f"{self.api_url}{url}", headers=self.token, data=data)
-        if r.status_code == 401 and r.json()['message'] == "The access token expired":
-            self.token = self.__getTokenHeader()
-            return self.__patchData(url, data)
-        elif r.status_code != 204:
-            raise Exception("Error: " + str(r.status_code) + " " + r.text)
-        return r.json()
-    
-    def __deleteData(self, url):
-        r = requests.delete(f"{self.api_url}{url}", headers=self.token)
-        if r.status_code == 401 and r.json()['message'] == "The access token expired":
-            self.token = self.__getTokenHeader()
-            return self.__deleteData(url)
-        elif r.status_code != 204:
-            raise Exception("Error: " + str(r.status_code) + " " + r.text)
-        return r.json()
     
     # ------------------- GET TOKEN ------------------- #
     
