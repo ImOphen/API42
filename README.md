@@ -10,4 +10,4 @@ I have made a 42 API python wrapper, where it allows you to make api calls with 
 ## Examples
 
  in this example, we can find people searching for a minishell group in Khouribga ( campus 16 )
- ![image](https://user-images.githubusercontent.com/43254081/220162983-faa5f068-fc0b-4a1c-992b-201a64eba852.png)
+<img width="1181" alt="image" src="https://user-images.githubusercontent.com/43254081/220163147-5b75893e-838d-49d8-9742-3bda9a43182e.png">
