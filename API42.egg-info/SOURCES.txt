@@ -1,7 +1,8 @@
-API42.py
 LICENSE
 setup.cfg
 setup.py
+API42/API42.py
+API42/__init__.py
 API42.egg-info/PKG-INFO
 API42.egg-info/SOURCES.txt
 API42.egg-info/dependency_links.txt
