@@ -3,7 +3,7 @@ Name: API42
 Version: 0.1
 Summary: Wrapper for the 42 intra API
 Home-page: https://github.com/ImOphen/API42
-Download-URL: https://github.com/ImOphen/API42/archive/refs/tags/v0.1.1-GET.tar.gz
+Download-URL: https://github.com/ImOphen/API42/archive/refs/tags/v0.1.2-GET.tar.gz
 Author: Ayman Touhami
 Author-email: itsophen@gmail.com
 License: MIT
