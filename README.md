@@ -10,238 +10,238 @@ I have made a 42 API python wrapper, where it allows you to make api calls with 
 ## Examples :
 
  in this example, we can find people searching for a minishell group in Khouribga ( campus 16 )
-<img width="1177" alt="image" src="https://user-images.githubusercontent.com/43254081/220163247-849152c6-9443-454d-85e6-70f0a790bf6a.png">
-
+<img width="1087" alt="image" src="https://user-images.githubusercontent.com/43254081/220191609-01976679-fbd5-4717-9abb-48a18c71a088.png">
 
 ## Methods :
 ```python
-     getToken():
+    # ------------------- get TOKEN ------------------- #
+        getToken()
     # ------------------- Accreditations ------------------- #
-    getAllAccreditations(query=""):
-    getAccreditationByID(accreditationId):
+        getAllAccreditations(*params)
+        getAccreditationByID(accreditationId)
     # ------------------- Achievements ------------------- #
-    getAllAchievements(query=""):
-    getAchievementByID(achievementId):
-    getCursusAchievements(cursusId, query=""):
-    getCampusAchievements(campusId, query=""):
-    getTitlesAchievements(titleId, query=""):
+        getAllAchievements(*params)
+        getAchievementByID(achievementId)
+        getCursusAchievements(cursusId, *params)
+        getCampusAchievements(campusId, *params)
+        getTitlesAchievements(titleId, *params)
     # ------------------- Achievements users ------------------- #
-    getAllAchievementsUsers(query=""):
-    getAchievementsUsersByID(achievementUserId):
+        getAllAchievementsUsers(*params)
+        getAchievementsUsersByID(achievementUserId)
     # ------------------- Amendments ------------------- #
-    getAllAmendments(query=""):
-    getAmendmentByID(amendmentId):
-    getUserAmendments(userId, query=""):
-    getIntershipsAmendments(intershipId, query=""):
+        getAllAmendments(*params)
+        getAmendmentByID(amendmentId)
+        getUserAmendments(userId, *params)
+        getIntershipsAmendments(intershipId, *params)
     # ------------------- Announcements ------------------- #
-    getAllAnnouncements(query=""):
-    getAnnouncementByID(announcementId):
+        getAllAnnouncements(*params)
+        getAnnouncementByID(announcementId)
     # ------------------- Anti Grav Units ------------------- #
-    getAllAntiGravUnits(query=""):
-    getAntiGravUnitByID(antiGravUnitId):
+        getAllAntiGravUnits(*params)
+        getAntiGravUnitByID(antiGravUnitId)
     # ------------------- Anti Grav Units Users ------------------- #
-    getAllAntiGravUnitsUsers(query=""):
-    getAntiGravUnitsUsersByID(antiGravUnitsUserId):
-    getUserAntiGravUnits(userId, query=""):
-    getCampusAntiGravUnits(campusId, query=""):
+        getAllAntiGravUnitsUsers(*params)
+        getAntiGravUnitsUsersByID(antiGravUnitsUserId)
+        getUserAntiGravUnits(userId, *params)
+        getCampusAntiGravUnits(campusId, *params)
     # ------------------- Apps ------------------- #
-    getAllApps(query=""):
-    getAppByID(appId):
-    getUserApps(userId, query=""):
+        getAllApps(*params)
+        getAppByID(appId)
+        getUserApps(userId, *params)
     # ------------------- Attachments ------------------- #
-    getAllAttachments(query=""):
-    getAttachmentByID(attachmentId):
-    getProjectSessionsAttachments(projectSessionId, query=""):
-    getProjectAttachments(projectId, query=""):
+        getAllAttachments(*params)
+        getAttachmentByID(attachmentId)
+        getProjectSessionsAttachments(projectSessionId, *params)
+        getProjectAttachments(projectId, *params)
     # ------------------- Balances ------------------- #
-    getAllBalances(query=""):
-    getBalanceByID(balanceId):
-    getPoolsBalances(poolId, query=""):
+        getAllBalances(*params)
+        getBalanceByID(balanceId)
+        getPoolsBalances(poolId, *params)
     # ------------------- Bloc deadlines ------------------- #
-    getAllBlocDeadlines(query=""):
-    getBlocDeadlineByID(blocDeadlineId):
-    getBlocsBlocDeadlines(blocId, query=""):
+        getAllBlocDeadlines(*params)
+        getBlocDeadlineByID(blocDeadlineId)
+        getBlocsBlocDeadlines(blocId, *params)
     # ------------------- Blocs ------------------- #
-    getAllBlocs(query=""):
-    getBlocByID(blocId):
+        getAllBlocs(*params)
+        getBlocByID(blocId)
     # ------------------- Broadcasts ------------------- #
-    getCampusBroadcasts(campusId, query=""):
+        getCampusBroadcasts(campusId, *params)
     # ------------------- campus ------------------- #
-    getAllCampuses(query=""):
-    getCampusByID(campusId):
-    getCampusStats(campusId, query=""):
+        getAllCampuses(*params)
+        getCampusByID(campusId)
+        getCampusStats(campusId, *params)
     # ------------------- Certificates ------------------- #
-    getAllCertificates(query=""):
-    getCertificateByID(certificateId):
+        getAllCertificates(*params)
+        getCertificateByID(certificateId)
     # ------------------- Certificates Users ------------------- #
-    getAllCertificatesUsers(query=""):
-    getCertificateUserByID(certificateUserId):
-    getUserCertificates(userId, query=""):
-    getCertificateCertificatesUsers(certificateId, query=""):
+        getAllCertificatesUsers(*params)
+        getCertificateUserByID(certificateUserId)
+        getUserCertificates(userId, *params)
+        getCertificateCertificatesUsers(certificateId, *params)
     # ------------------- Closes ------------------- #
-    getAllCloses(query=""):
-    getCloseByID(closeId):
-    getUserCloses(userId, query=""):
+        getAllCloses(*params)
+        getCloseByID(closeId)
+        getUserCloses(userId, *params)
     # ------------------- Coalitions ------------------- #
-    getAllCoalitions(query=""):
-    getCoalitionByID(coalitionId):
-    getUserCoalitions(userId, query=""):
-    getBlocsCoalitions(blocId, query=""):
+        getAllCoalitions(*params)
+        getCoalitionByID(coalitionId)
+        getUserCoalitions(userId, *params)
+        getBlocsCoalitions(blocId, *params)
     # ------------------- Coalitions Users ------------------- #
-    getAllCoalitionsUsers(query=""):
-    getCoalitionUserByID(coalitionUserId):
-    getUserCoalitionsUsers(userId, query=""):
-    getCoalitionCoalitionsUsers(coalitionId, query=""):
+        getAllCoalitionsUsers(*params)
+        getCoalitionUserByID(coalitionUserId)
+        getUserCoalitionsUsers(userId, *params)
+        getCoalitionCoalitionsUsers(coalitionId, *params)
     # ------------------- Commands ------------------- #
-    getProductsCommands(productId, query=""):
+        getProductsCommands(productId, *params)
     # ------------------- Community Services ------------------- #
-    getAllCommunityServices(query=""):
-    getCommunityServiceByID(communityServiceId):
-    getCloseCommunityServices(closeId, query=""):
+        getAllCommunityServices(*params)
+        getCommunityServiceByID(communityServiceId)
+        getCloseCommunityServices(closeId, *params)
     # ------------------- Companies ------------------- #
-    getAllCompanies(query=""):
-    getCompanyByID(companyId):
-    getCompanySubscribedUsers(companyId, query=""):
-    getCompanyInternshipsUsers(companyId, query=""):
+        getAllCompanies(*params)
+        getCompanyByID(companyId)
+        getCompanySubscribedUsers(companyId, *params)
+        getCompanyInternshipsUsers(companyId, *params)
     # ------------------- Correction point historics ------------------- #
-    GetUserCorrectionPointHistorics(userId, query=""):
+        getUserCorrectionPointHistorics(userId, *params)
     # ------------------- Cursus ------------------- #
-    getAllCursus(query=""):
-    getCursusByID(cursusId):
+        getAllCursus(*params)
+        getCursusByID(cursusId)
     # ------------------- Cursus Users ------------------- #
-    getAllCursusUsers(query=""):
-    getCursusUserByID(cursusUserId):
-    getCursusCursusUsers(cursusId, query=""):
-    getUserCursusUsers(userId, query=""):
+        getAllCursusUsers(*params)
+        getCursusUserByID(cursusUserId)
+        getCursusCursusUsers(cursusId, *params)
+        getUserCursusUsers(userId, *params)
     # ------------------- Dashes ------------------- #
-    getAllDashes(query=""):
-    getDashByID(dashId):
+        getAllDashes(*params)
+        getDashByID(dashId)
     # ------------------- Dashes Users ------------------- #
-    getAllDashesUsers(query=""):
-    getDashesUserByID(dashUserId):
-    getDashesDashesUsers(dashId, query=""):
+        getAllDashesUsers(*params)
+        getDashesUserByID(dashUserId)
+        getDashesDashesUsers(dashId, *params)
     # ------------------- Endpoints ------------------- #
-    getAllEndpoints(query=""):
-    getEndpointByID(endpointId):
+        getAllEndpoints(*params)
+        getEndpointByID(endpointId)
     # ------------------- Evaluations ------------------- #
-    getAllEvaluations(query=""):
-    getEvaluationByID(evaluationId):
+        getAllEvaluations(*params)
+        getEvaluationByID(evaluationId)
     # ------------------- Events ------------------- #
-    getAllEvents(query=""):
-    getEventByID(eventId):
-    getCursusEvents(cursusId, query=""):
-    getCampusEvents(campusId, query=""):
-    getUsersEvents(userId, query=""):
+        getAllEvents(*params)
+        getEventByID(eventId)
+        getCursusEvents(cursusId, *params)
+        getCampusEvents(campusId, *params)
+        getUsersEvents(userId, *params)
     # ------------------- Events Users ------------------- #
-    getAllEventsUsers(query=""):
-    getEventsUserByID(eventsUserId):
-    getUsersEventsUsers(userId, query=""):
-    getEventsEventsUsers(eventId, query=""):
+        getAllEventsUsers(*params)
+        getEventsUserByID(eventsUserId)
+        getUsersEventsUsers(userId, *params)
+        getEventsEventsUsers(eventId, *params)
     # ------------------- Exams ------------------- #
-    getAllExams(query=""):
-    getExamByID(examId):
-    getCursusExams(cursusId, query=""):
-    getCampusExams(campusId, query=""):
-    getCampusCursusExams(campusId, cursusId, query=""):
-    getUserExams(userId, query=""):
-    getProjectExams(projectId, query=""):
+        getAllExams(*params)
+        getExamByID(examId)
+        getCursusExams(cursusId, *params)
+        getCampusExams(campusId, *params)
+        getCampusCursusExams(campusId, cursusId, *params)
+        getUserExams(userId, *params)
+        getProjectExams(projectId, *params)
     # ------------------- Exams Users ------------------- #
-    getExamExamsUsers(examId, query=""):
+        getExamExamsUsers(examId, *params)
     # ------------------- Experiences ------------------- #
-    getAllExperiences(query=""):
-    getCampusExperiences(campusId, query=""):
-    getProjectUserExperiences(projectUserId, query=""):
-    getUserExperiences(userId, query=""):
-    getSkillExperiences(skillId, query=""):
-    getPartnershipUserExperiences(partnershipUserId, query=""):
-    getExperienceByID(experienceId):
+        getAllExperiences(*params)
+        getCampusExperiences(campusId, *params)
+        getProjectUserExperiences(projectUserId, *params)
+        getUserExperiences(userId, *params)
+        getSkillExperiences(skillId, *params)
+        getPartnershipUserExperiences(partnershipUserId, *params)
+        getExperienceByID(experienceId)
     # ------------------- Expertises ------------------- #
-    getAllExpertises(query=""):
-    getExpertiseByID(expertiseId):
+        getAllExpertises(*params)
+        getExpertiseByID(expertiseId)
     # ------------------- Expertises Users ------------------- #
-    getExpertiseExpertisesUsers(expertiseId, query=""):
-    getUserExpertisesUsers(userId, query=""):
-    getAllExpertisesUsers(query=""):
-    getExpertiseUserByID(expertiseUserId):
+        getExpertiseExpertisesUsers(expertiseId, *params)
+        getUserExpertisesUsers(userId, *params)
+        getAllExpertisesUsers(*params)
+        getExpertiseUserByID(expertiseUserId)
     # ------------------- Feedbacks ------------------- #
-    getEventFeedbacks(eventId, query=""):
-    getAllFeedbacks(query=""):
-    getScaleTeamFeedbacks(scaleTeamId, query=""):
-    getEventFeedback(eventId, feedbackId):
-    getFeedbackByID(feedbackId):
-    getScaleTeamFeedback(scaleTeamId, feedbackId):
+        getEventFeedbacks(eventId, *params)
+        getAllFeedbacks(*params)
+        getScaleTeamFeedbacks(scaleTeamId, *params)
+        getEventFeedback(eventId, feedbackId)
+        getFeedbackByID(feedbackId)
+        getScaleTeamFeedback(scaleTeamId, feedbackId)
     # ------------------- Flags ------------------- #
-    getAllFlags(query=""):
+        getAllFlags(*params)
     # ------------------- Flashes ------------------- #
-    getAllFlashes(query=""):
-    getFlashByID(flashId):
+        getAllFlashes(*params)
+        getFlashByID(flashId)
     # ------------------- Flash Users ------------------- #
-    getFlashFlashUsers(flashId, query=""):
-    getAllFlashUsers(query=""):
-    getFlashFlashUserByID(flashId, flashUserId):
-    getFlashUserByID(flashUserId):
+        getFlashFlashUsers(flashId, *params)
+        getAllFlashUsers(*params)
+        getFlashFlashUserByID(flashId, flashUserId)
+        getFlashUserByID(flashUserId)
     # ------------------- Gitlab Users ------------------- #
-    getUserGitlabUsers(userId, query=""):
+        getUserGitlabUsers(userId, *params)
     # ------------------- Groups ------------------- #
-    getAllGroups(query=""):
-    getUserGroups(userId, query=""):
-    getGroupByID(groupId):
+        getAllGroups(*params)
+        getUserGroups(userId, *params)
+        getGroupByID(groupId)
     # ------------------- Groups Users ------------------- #
-    getGroupGroupsUsers(groupId, query=""):
-    getUserGroupsUsers(userId, query=""):
-    getAllGroupsUsers(query=""):  
-    getGroupUserByID(groupId, groupsUserId):
-    getUserGroupByID(userId, groupsUserId):
+        getGroupGroupsUsers(groupId, *params)
+        getUserGroupsUsers(userId, *params)
+        getAllGroupsUsers(*params)  
+        getGroupUserByID(groupId, groupsUserId)
+        getUserGroupByID(userId, groupsUserId)
     # ------------------- internships ------------------- #
-    getAllInternships(query=""):
-    getInternshipByID(internshipId):
+        getAllInternships(*params)
+        getInternshipByID(internshipId)
     # ------------------- Journals  ------------------- #
-    getAllJournals(query=""):
+        getAllJournals(*params)
     # ------------------- Languages ------------------- #
-    getAllLanguages(query=""):
-    getLanguageByID(languageId):
+        getAllLanguages(*params)
+        getLanguageByID(languageId)
     # ------------------- Languages Users ------------------- #
-    getUserLanguagesUsers(userId, query=""):
-    getAllLanguagesUsers(query=""):
-    getUserLanguageByID(userId, languageUserId):
-    getLanguageUserByID(languageUserId):
+        getUserLanguagesUsers(userId, *params)
+        getAllLanguagesUsers(*params)
+        getUserLanguageByID(userId, languageUserId)
+        getLanguageUserByID(languageUserId)
     # ------------------- Levels ------------------- #
-    getAllLevels(query=""):
-    getCursusLevels(cursusId, query=""):
+        getAllLevels(*params)
+        getCursusLevels(cursusId, *params)
     # ------------------- Locations ------------------- #
-    getAllLocations(query=""):
-    getUserLocations(userId, query=""):
-    getCampusLocations(campusId, query=""):
-    getLocationByID(locationId):
+        getAllLocations(*params)
+        getUserLocations(userId, *params)
+        getCampusLocations(campusId, *params)
+        getLocationByID(locationId)
     # ------------------- Notes ------------------- #
-    getAllNotes(query=""):
-    getUserNotes(userId, query=""):
-    getCampusNotes(campusId, query=""):
-    getNoteByID(noteId):
+        getAllNotes(*params)
+        getUserNotes(userId, *params)
+        getCampusNotes(campusId, *params)
+        getNoteByID(noteId)
     # ------------------- notions ------------------- #
-    getAllNotions(query=""):
-    getCursusNotions(cursusId, query=""):
-    getTagNotions(tagId, query=""):
-    getNotionByID(notionId):
+        getAllNotions(*params)
+        getCursusNotions(cursusId, *params)
+        getTagNotions(tagId, *params)
+        getNotionByID(notionId)
     # ------------------- Offers ------------------- #
-    getAllOffers(query=""):
-    getOfferByID(offerId):
+        getAllOffers(*params)
+        getOfferByID(offerId)
     # ------------------- Offers Users ------------------- #
-    getAllOffersUsers(query=""):
-    getUserOffersUsers(userId, query=""):
-    getOfferOffersUsers(offerId, query=""):
-    getOfferUserByID(offerUserId):
+        getAllOffersUsers(*params)
+        getUserOffersUsers(userId, *params)
+        getOfferOffersUsers(offerId, *params)
+        getOfferUserByID(offerUserId)
     # ------------------- Params Project sessions rules ------------------- #
-    getAllParamsProjectSessionsRules(query=""):
-    getParamsProjectSessionsRuleByID(paramsProjectSessionsRuleId):
-    getProjectSessionsRuleParamsProjectSessionsRules(projectSessionsRuleId, query=""):
+        getAllParamsProjectSessionsRules(*params)
+        getParamsProjectSessionsRuleByID(paramsProjectSessionsRuleId)
+        getProjectSessionsRuleParamsProjectSessionsRules(projectSessionsRuleId, *params)
     # ------------------- Partnerships ------------------- #
-    getAllPartnerships(query=""):
-    getPartnershipByID(partnershipId):
+        getAllPartnerships(*params)
+        getPartnershipByID(partnershipId)
     # ------------------- Partnerships Users ------------------- #
-    getAllPartnershipsUsers(query=""):
-    getPartnershipPartnershipsUsers(partnershipId, query=""):
-    getPartnershipUserByID(partnershipUserId):
+        getAllPartnershipsUsers(*params)
+        getPartnershipPartnershipsUsers(partnershipId, *params)
+        getPartnershipUserByID(partnershipUserId)
     # ------------------- Patronages ------------------- #
     # ------------------- Patronages reports ------------------- #
     # ------------------- Pools ------------------- #
@@ -251,32 +251,32 @@ I have made a 42 API python wrapper, where it allows you to make api calls with 
     # ------------------- Project Sessions rules ------------------- #
     # ------------------- Project Sessions skills ------------------- #
     # ------------------- Project ------------------- #
-    getAllProjects(query=""):
-    getProjectByID(projectId):
-    getCursusProjects(cursusId, query=""):
-    getProjectProjects(projectId, query=""):
-    getMeProjects(query=""):
+        getAllProjects(*params)
+        getProjectByID(projectId)
+        getCursusProjects(cursusId, *params)
+        getProjectProjects(projectId, *params)
+        getMeProjects(*params)
     # ------------------- Project users ------------------- #
-    getAllProjectsUsers(query=""):
-    getProjectProjectsUsers(projectId, query=""):
-    getUserProjectsUsers(userId, query=""):
-    getProjectUserByID(projectUserId):
+        getAllProjectsUsers(*params)
+        getProjectProjectsUsers(projectId, *params)
+        getUserProjectsUsers(userId, *params)
+        getProjectUserByID(projectUserId)
     # ------------------- Quests ------------------- #
     # ------------------- Quests users ------------------- #
     # ------------------- Roles  ------------------- #
     # ------------------- Roles entities ------------------- #
     # ------------------- Rules  ------------------- #
     # ------------------- Scale Teams  ------------------- #
-    getAllScaleTeams(query=""):
-    getScaleTeamByID(scaleTeamId):
-    getProjectSessionScaleTeams(projectSessionId, query=""):
-    getProjectScaleTeams(projectId, query=""):
-    getUserScaleTeamsAsCorrector(userId, query=""):
-    getUserScaleTeamsAsCorrected(userId, query=""):
-    getMeScaleTeamsAsCorrector(query=""):
-    getMeScaleTeamsAsCorrected(query=""):
-    getMeScaleTeams(query=""):
-    getUserScaleTeams(userId, query=""):
+        getAllScaleTeams(*params)
+        getScaleTeamByID(scaleTeamId)
+        getProjectSessionScaleTeams(projectSessionId, *params)
+        getProjectScaleTeams(projectId, *params)
+        getUserScaleTeamsAsCorrector(userId, *params)
+        getUserScaleTeamsAsCorrected(userId, *params)
+        getMeScaleTeamsAsCorrector(*params)
+        getMeScaleTeamsAsCorrected(*params)
+        getMeScaleTeams(*params)
+        getUserScaleTeams(userId, *params)
     # ------------------- Scales  ------------------- #
     # ------------------- Scores  ------------------- #
     # ------------------- Skills  ------------------- #
@@ -293,23 +293,26 @@ I have made a 42 API python wrapper, where it allows you to make api calls with 
     # ------------------- transactions  ------------------- #
     # ------------------- translations  ------------------- #
     # ------------------- user candidatures  ------------------- #
-    getAllUserCandidatures(query=""):
-    getUserUserCandidature(userId):
-    getUserCandidatureByID(userCandidatureId):
+        getAllUserCandidatures(*params)
+        getUserUserCandidature(userId)
+        getUserCandidatureByID(userCandidatureId)
     # ------------------- users  ------------------- #
-    getUserLocationsStats(userId):
-    getCoalitionUsers(coalitionId, query=""):
-    getDashUsers(dashId, query=""):
-    getEventUsers(eventId, query=""):
-    getAccreditationUsers(accreditationId, query=""):
-    getTeamUsers(teamId, query=""):
-    getProjectUsers(projectId, query=""):
-    getAllUsers(query=""):
-    getCursusUsers(cursusId, query=""):
-    getCampusUsers(campusId, query=""):
-    getAchievementUsers(achievementId, query=""):
-    getTitleUsers(titleId, query=""):
-    getQuestUsers(questId, query=""):
-    getGroupUsers(groupId, query=""):
-    getUserByID(userId):
-    getMe():```
+        getUserLocationsStats(userId)
+        getCoalitionUsers(coalitionId, *params)
+        getDashUsers(dashId, *params)
+        getEventUsers(eventId, *params)
+        getAccreditationUsers(accreditationId, *params)
+        getTeamUsers(teamId, *params)
+        getProjectUsers(projectId, *params)
+        getAllUsers(*params)
+        getCursusUsers(cursusId, *params)
+        getCampusUsers(campusId, *params)
+        getAchievementUsers(achievementId, *params)
+        getTitleUsers(titleId, *params)
+        getQuestUsers(questId, *params)
+        getGroupUsers(groupId, *params)
+        getUserByID(userId)
+        getMe()
+    # ------------------- waitlists  ------------------- #
+    # -------------------------------------------------- #
+    ```
