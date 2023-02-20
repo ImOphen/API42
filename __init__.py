@@ -1,1 +1,1 @@
-from API42.Api42 import Api42, filter, sort, range
+from API42 import Api42, filter, sort, range
