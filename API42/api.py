@@ -10,7 +10,7 @@ class Api42():
         self.session = requests.Session()
         self.session.headers.update(self.__getTokenHeader())
     
-    def __combine_dict(self, *args):
+    def __combine_dict(self, args):
         d = {}
         for arg in args:
             d.update(arg)
