@@ -1,0 +1,9 @@
+LICENSE
+setup.cfg
+setup.py
+API42/Api42.py
+API42.egg-info/PKG-INFO
+API42.egg-info/SOURCES.txt
+API42.egg-info/dependency_links.txt
+API42.egg-info/requires.txt
+API42.egg-info/top_level.txt
