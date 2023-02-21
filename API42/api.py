@@ -84,9 +84,9 @@ class Api42():
         del self.client_secret
         del self.scope
         del self.api_url
+        del self.threads
         self.session.close()
         del self.session
-        del self.processes
 
     
     # ------------------- GET TOKEN ------------------- #

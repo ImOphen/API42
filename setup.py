@@ -8,7 +8,7 @@ setup(
   author = 'Ayman Touhami',
   author_email = 'itsophen@gmail.com',
   url = 'https://github.com/ImOphen/API42',
-  download_url = 'https://github.com/ImOphen/API42/archive/refs/tags/v0.0.5.tar.gz',
+  download_url = 'https://github.com/ImOphen/API42/archive/refs/tags/v0.0.5.2.tar.gz',
   keywords = ['42', 'Intra', 'API'],
   install_requires=[ 
           'requests',
