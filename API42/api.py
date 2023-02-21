@@ -43,7 +43,8 @@ class Api42():
             return self.__multiThreadingGetPage(url, params, page, _queue)
         elif r.status_code != 200:
             raise Exception("Error: " + str(r.status_code) + " " + r.text)
-        _queue.put(r.json())
+        res = r.json()
+        _queue.put(res)
         
     
     def __getPaginatedData(self, url, params):
@@ -56,8 +57,10 @@ class Api42():
             for i in range(self.threads):
                 t = threading.Thread(target=self.__multiThreadingGetPage, args=(url, params, Page, queues[i]))
                 threads.append(t)
-                t.start()
                 Page += 1
+            for i in range(self.threads):
+                threads[i].start()
+                time.sleep(0.1)
             for i in range(self.threads):
                 threads[i].join()
                 new_data += queues[i].get()
