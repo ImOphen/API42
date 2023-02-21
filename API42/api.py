@@ -4,7 +4,7 @@ import threading
 import queue
 
 class Api42():
-    def __init__(self, client_id, client_secret, scope, threads=1):
+    def __init__(self, client_id, client_secret, scope, threads=1, threading=False):
         self.client_id = client_id
         self.client_secret = client_secret
         self.scope = scope
@@ -12,6 +12,7 @@ class Api42():
         self.session = requests.Session()
         self.session.headers.update(self.__getTokenHeader())
         self.threads = threads
+        self.threading = threading
         
     def __combine_dict(self, args):
         d = {}
@@ -46,8 +47,7 @@ class Api42():
         res = r.json()
         _queue.put(res)
         
-    
-    def __getPaginatedData(self, url, params):
+    def __multiThreadedPaginatedData(self, url, params):
         data = []
         Page = 1
         while True:
@@ -69,6 +69,31 @@ class Api42():
             data += new_data
         return data
     
+    def __getPaginatedData(self, url, params):
+        if self.threading:
+            return self.__multiThreadedPaginatedData(url, params)
+        else:
+            data = []
+            Page = 1
+            while True:
+                params.update({'per_page': 100, 'page': Page})
+                r = self.session.get(f'{self.api_url}{url}', params=params)
+                if r.status_code == 401 and r.json()['message'] == "The access token expired":
+                    self.session.headers.update(self.__getTokenHeader())
+                    return self.__getPaginatedData(url, params)
+                elif r.status_code == 429:
+                    time.sleep(0.5)
+                    return self.__getPaginatedData(url, params)
+                elif r.status_code != 200:
+                    raise Exception("Error: " + str(r.status_code) + " " + r.text)
+                res = r.json()
+                if len(res) == 0:
+                    break
+                data += res
+                Page += 1
+            return data
+        
+     
     def __getNonPaginatedData(self, url):
         r = self.session.get(f'{self.api_url}{url}')
         if r.status_code == 401 and r.json()['message'] == "The access token expired":

@@ -2,13 +2,13 @@ from distutils.core import setup
 setup(
   name = 'API42',
   packages = ['API42'],
-  version = '0.0.5.4',
+  version = '0.0.5.5',
   license='MIT',
   description = 'Wrapper for the 42 intra API',
   author = 'Ayman Touhami',
   author_email = 'itsophen@gmail.com',
   url = 'https://github.com/ImOphen/API42',
-  download_url = 'https://github.com/ImOphen/API42/archive/refs/tags/v0.0.5.4.tar.gz',
+  download_url = 'https://github.com/ImOphen/API42/archive/refs/tags/v0.0.5.5.tar.gz',
   keywords = ['42', 'Intra', 'API'],
   install_requires=[ 
           'requests',
