@@ -5,7 +5,7 @@ I have made a 42 API python wrapper, where it allows you to make api calls with 
 > it's very early and doesn't have all the routes and methods, it's a work in progress ^^, Any feedback or ideas are appreciated
 
     - Support for python 3.6 and above
-    - Multi-threading for faster requests
+    - Multi-threading for faster requests [BETA]
     - Easy to use
     - Reliability and stability ( requests are resent automatically in case of failure because of Rate limit or Token expiration )
     - No need to use a token, it will be generated automatically and kept track of
@@ -17,7 +17,8 @@ I have made a 42 API python wrapper, where it allows you to make api calls with 
 ## Examples :
 
  in this example, we can find people searching for a minishell group in Khouribga ( campus 16 )
-<img width="1087" alt="image" src="https://user-images.githubusercontent.com/43254081/220191609-01976679-fbd5-4717-9abb-48a18c71a088.png">
+<img width="1105" alt="image" src="https://user-images.githubusercontent.com/43254081/220220830-d9ba5048-5a34-4de1-be6d-1495687b72d9.png">
+
 
 ## Methods :
 ```python
