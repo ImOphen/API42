@@ -4,6 +4,13 @@ I have made a 42 API python wrapper, where it allows you to make api calls with 
 
 > it's very early and doesn't have all the routes and methods, it's a work in progress ^^, Any feedback or ideas are appreciated
 
+    - support for python 3.6 and above
+    - Multi-threading for faster requests
+    - Easy to use
+    - Reliability and stability ( requests are reused in case of failure because of Rate limit or Token expiration )
+    - No need to use a token, it will be generated automatically
+    
+
 ## Installation :  
   ``pip install api42``
   

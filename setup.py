@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'API42',
   packages = ['API42'],
-  version = '0.0.5',
+  version = '0.0.5.2',
   license='MIT',
   description = 'Wrapper for the 42 intra API',
   author = 'Ayman Touhami',

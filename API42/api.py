@@ -1,15 +1,18 @@
 import requests
 import time
+import threading
+import queue
 
 class Api42():
-    def __init__(self, client_id, client_secret, scope):
+    def __init__(self, client_id, client_secret, scope, threads=1):
         self.client_id = client_id
         self.client_secret = client_secret
         self.scope = scope
         self.api_url = 'https://api.intra.42.fr/v2'
         self.session = requests.Session()
         self.session.headers.update(self.__getTokenHeader())
-    
+        self.threads = threads
+        
     def __combine_dict(self, args):
         d = {}
         for arg in args:
@@ -29,24 +32,38 @@ class Api42():
         token =  { 'Authorization': 'Bearer ' + r.json()['access_token']  }
         return token
     
+    def __multiThreadingGetPage(self, url, params, page, _queue):
+        params.update({'per_page': 100, 'page': page})
+        r = self.session.get(f'{self.api_url}{url}', params=params)
+        if r.status_code == 401 and r.json()['message'] == "The access token expired":
+            self.session.headers.update(self.__getTokenHeader())
+            return self.__multiThreadingGetPage(url, params, page, _queue)
+        elif r.status_code == 429:
+            time.sleep(0.5)
+            return self.__multiThreadingGetPage(url, params, page, _queue)
+        elif r.status_code != 200:
+            raise Exception("Error: " + str(r.status_code) + " " + r.text)
+        _queue.put(r.json())
+        
+    
     def __getPaginatedData(self, url, params):
         data = []
         Page = 1
         while True:
-            params['page'] = Page
-            r = self.session.get(f'{self.api_url}{url}', params=params)
-            if r.status_code == 401 and r.json()['message'] == "The access token expired":
-                self.session.headers.update(self.__getTokenHeader())
-                continue
-            elif r.status_code == 429:
-                time.sleep(0.5)
-                continue
-            elif r.status_code != 200:
-                raise Exception("Error: " + str(r.status_code) + " " + r.text)
-            if len(r.json()) == 0:
+            queues = [queue.Queue() for i in range(self.threads)]
+            threads = []
+            new_data = []
+            for i in range(self.threads):
+                t = threading.Thread(target=self.__multiThreadingGetPage, args=(url, params, Page, queues[i]))
+                threads.append(t)
+                t.start()
+                Page += 1
+            for i in range(self.threads):
+                threads[i].join()
+                new_data += queues[i].get()
+            if len(new_data) == 0:
                 break
-            data += r.json()
-            Page += 1
+            data += new_data
         return data
     
     def __getNonPaginatedData(self, url):
@@ -61,6 +78,16 @@ class Api42():
             raise Exception("Error: " + str(r.status_code) + " " + r.text)
         return r.json()
     
+    
+    def close(self):
+        del self.client_id
+        del self.client_secret
+        del self.scope
+        del self.api_url
+        self.session.close()
+        del self.session
+        del self.processes
+
     
     # ------------------- GET TOKEN ------------------- #
     
