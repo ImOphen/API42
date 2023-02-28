@@ -490,7 +490,7 @@ class Api42():
         return self.__getPaginatedData(f'/projects_users/{projectUserId}/experiences/', self.__combine_dict(args))
     
     def getUserExperiences(self, userId, *args):
-        return self.__getPaginatedData(f'/users/{userId}/experience/', self.__combine_dict(args))
+        return self.__getPaginatedData(f'/users/{userId}/experiences/', self.__combine_dict(args))
     
     def getSkillExperiences(self, skillId, *args):
         return self.__getPaginatedData(f'/skills/{skillId}/experiences/', self.__combine_dict(args))
@@ -897,4 +897,11 @@ class Api42():
 
     # ------------------- waitlists  ------------------- #
 
+    # ------------------- custom -------------------- #
+    
+    def getCustomPaginatedData(self, url, *args):
+        return self.__getPaginatedData(url, self.__combine_dict(args))
+
+    def getCustomNonPaginatedData(self, url):
+        return self.__getNonPaginatedData(url)
     # -------------------------------------------------- #
